@@ -5,6 +5,11 @@
 ##		RiceMonster(part of it)		    ##
 ######################################################
 
+# zsh options
+setopt CORRECT			# command CORRECTION
+setopt INC_APPEND_HISTORY SHARE_HISTORY
+setopt APPEND_HISTORY
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
