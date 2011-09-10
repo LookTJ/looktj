@@ -1,4 +1,4 @@
-######################################################
+#####################################################
 ##		LookTJ's zshrc			    ##
 ##		based on:			    ##
 ##		ArchWiki's example		    ##
@@ -9,6 +9,12 @@
 setopt CORRECT			# command CORRECTION
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt APPEND_HISTORY
+
+# rehash all commands
+compctl -C -K cmd-comp -c
+function cmd-comp {
+	rehash
+}
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -32,7 +38,7 @@ export RPS1="[$(print '%{\e[1;36m%}%B%d%b%{\e[0m%}')]"
 # Vars used on zsh
 export EDITOR="vim"
 export VISUAL="vim"
-export BROWSER="firefox"
+export BROWSER="google-chrome"
 
 # Pretty colors
 alias grep='grep --color=always'
@@ -67,6 +73,7 @@ bindkey '^i' expand-or-complete-prefix
 
 # Aliases
 alias ls='ls --color=auto -F'
+alias killall='killall -15'
 # End of lines added by compinstall
 
 if [[ `tty` = "/dev/tty1" ]]; then startx; logout; fi
