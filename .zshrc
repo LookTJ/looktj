@@ -73,7 +73,7 @@ bindkey '^i' expand-or-complete-prefix
 
 # Aliases
 alias ls='ls --color=auto -F'
-alias killall='killall -15'
+alias killnow='killall -15'
 # End of lines added by compinstall
 
 if [[ `tty` = "/dev/tty1" ]]; then startx; logout; fi
