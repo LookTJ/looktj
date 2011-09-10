@@ -74,6 +74,7 @@ bindkey '^i' expand-or-complete-prefix
 # Aliases
 alias ls='ls --color=auto -F'
 alias killnow='killall -15'
+alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
 # End of lines added by compinstall
 
 if [[ `tty` = "/dev/tty1" ]]; then startx; logout; fi
