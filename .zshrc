@@ -25,9 +25,8 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/taylor/.zshrc'
 
-autoload -U compinit promptinit
+autoload -U compinit
 compinit
-promptinit
 
 # This will set the default prompt to the walters theme
 # prompt walters
@@ -38,7 +37,7 @@ export RPS1="[$(print '%{\e[1;36m%}%B%d%b%{\e[0m%}')]"
 # Vars used on zsh
 export EDITOR="vim"
 export VISUAL="vim"
-export BROWSER="google-chrome"
+export BROWSER="firefox"
 
 # Pretty colors
 alias grep='grep --color=always'
@@ -75,5 +74,14 @@ bindkey '^i' expand-or-complete-prefix
 alias ls='ls --color=auto -F'
 alias killnow='killall -15'
 # End of lines added by compinstall
+#
+#
+autoload -U history-search-end
+
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "\e[A" history-beginning-search-backward-end
+bindkey "\e[B" history-beginning-search-forward-end
 
 if [[ `tty` = "/dev/tty1" ]]; then startx; logout; fi
